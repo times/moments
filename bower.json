@@ -1,8 +1,8 @@
 {
-  "name": "integratr",
+  "name": "integratr-video",
   "version": "0.0.1",
   "keywords": "seed, polymer, web-components",
-  "main": "integratr.html",
+  "main": "integratr-video.html",
   "dependencies": {
     "polymer": "Polymer/polymer#~0.3.1",
     "jquery": "~2.1.1",

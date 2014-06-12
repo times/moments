@@ -16,7 +16,14 @@ body, div {
 }
 
 .videobox {
-	height:248px;
+	margin-bottom:10px;
+}
+
+.videourl {
+	height:1.1em;
+	width:250px;
+	padding:4px;
+	margin:0 0 10px 4px;
 }
 
 .parameters {
@@ -47,7 +54,7 @@ body, div {
 
 .ugcBox input {
 	width:200px;
-	height:1em;
+	height:1.1em;
 	padding:4px 4px 0 4px;
 	margin-left:8px;
 	font-family: "TimesClassicText-Roman";
@@ -66,6 +73,7 @@ body, div {
 	border-radius:10px;
 	text-align:center;
 	height:26px;
+	width:30px;
 	padding:8px 5px;
 	margin:0;
 	background-color:#E3E0FF;
@@ -73,6 +81,11 @@ body, div {
 	cursor:hand;
 	cursor:pointer;
 }
+
+#out {
+	margin-left:20px;
+}
+
 .moments {
 	height:135px;
 	overflow-y:scroll;

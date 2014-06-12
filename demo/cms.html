@@ -1,12 +1,19 @@
-<!doctype HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
 	<head>
+		<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moments Admin</title>
 
-    <title>Integratr CMS</title>
+		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/handlebars/handlebars.js"></script>
+		<script type="text/javascript" src="../bower_components/foundation/js/foundation.js"></script>
+		<script type="text/javascript" src="../bower_components/modernizr/modernizr.js"></script>
 
-	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bower_components/foundation/css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="../bower_components/foundation/css/foundation.css"/>
 
-    <script type="text/javascript" src="js/handlebars.js"></script>
     <link rel="stylesheet" type="text/css" href="css/cms.css"/>
 
     <link rel="stylesheet" type="text/css" href="http://www.thetimes.co.uk/fonts/TimesModern-ExtraBold.css">
@@ -18,56 +25,86 @@
 
 	</head>
   <body>
+		<nav class="top-bar" data-topbar>
+		  <ul class="title-area">
+		    <li class="name">
+		      <h1><a href="#">moments .<span style="color: red;">.</span>.</a></h1>
+		    </li>
+		  </ul>
+		</nav>
+    <div id="wrapper" class="row">
+      <div class="leftcol small-6 columns">
+				<fieldset>
+					<legend>Video</legend>
+          <div class="videobox">
+              Video URL: <input class="videourl" type="text" name="videourl" value="http://video-js.zencoder.com/oceans-clip.mp4">
+							<video id="player" class="video-js vjs-default-skin"></video>
+          </div>
+          <div class="parameters">
+						<div class="times row">
+							<div class="small-2 columns">
+                <input type="text" class="timestamp" value="0" />
+							</div>
+							<div class="small-5 columns">
+                <div class="start row collapse">
+									<div class="small-3 columns">
+										<a class="addMoment button prefix" id="in">In</a>
+									</div>
+									<div class="small-9 columns">
+										<input type="text" class="startTS" value="0" />
+									</div>
+								</div> <!-- .start -->
+							</div>
+							<div class="small-5 columns">
+								<div class="end row collapse">
+									<div class="small-3 columns">
+										<a class="addMoment button prefix" id="out">Out</a>
+									</div>
+									<div class="small-9 columns">
+										<input type="text" class="endTS" value="0" />
+									</div>
+								</div> <!-- .end -->
+							</div>
+						</div> <!-- .times -->
+					</div> <!-- .parameters -->
+				</fieldset>
+				<fieldset>
+					<legend>Description</legend>
+          <div class="items">
+            <input type="text" placeholder="Enter a description of the video moment here" id="desc" />
+						<input type="text" placeholder="Enter an image to include here (optional)" id="extraImg" />
+						<textarea placeholder="Enter some text to include here (optional)" id="extraText"></textarea>
+						<input type="text" placeholder="Enter a URL to a datawrapper chart here (optional)" id="extraDW" />
+          </div>
+					<a class="addMoment button success" id="add">Add</a>
+        </fieldset>
+        <fieldset>
+					<legend>Moments</legend>
+					<ul class="moments">
+					</ul>
+        </fieldset>
+      </div> <!-- / .leftcol -->
+      <div class="rightcol small-6 columns">
+				<fieldset>
+					<legend>Article</legend>
+          <div class="article">
+              <h1>Headline</h1>
 
-    <div id="wrapper">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-        <div class="leftcol">
-            <div class="videobox">
-                Video URL: <input class="videourl" type="text" name="videourl" value="http://www.youtube.com/embed/O1Y8f8_SiSQ">
-                <iframe width="440" height="248" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="parameters">
-                <div class="timestamp">
-                    <img src=""/> <span>34:23</span>
-                </div>
-                <div class="ugcBox">
-                    Add UGC: <input class="ugc" type="text" name="ugc">
-                </div>
-                <div class="description">
-                    <textarea>Enter a description of the video moment here</textarea>
-                </div>
-                <div class="addMoment" id="in">In</div>
-                <div class="addMoment" id="out">Out</div>
-            </div>
-            <h2>Moments</h2>
-            <div class="moments">
-                <div class="moment"></div>
-                <div class="moment"></div>
-                <div class="moment"></div>
-                <div class="moment"></div>
-            </div>
-        </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-        <div class="rightcol">
-            <div class="article">
-                
-                <h1>Headline</h1>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
-            </div>
-        </div>
-
-    </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+          </div>
+				</fieldset>
+    	</div>
+    </div> <!-- / #wrapper -->
 
     <script type="text/javascript" src="js/cms.js"></script>
 

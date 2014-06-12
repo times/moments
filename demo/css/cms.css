@@ -1,19 +1,19 @@
 body, div {
 	padding:0;
 	margin:0;
-	font-family:'TimesClassicText-Roman';
+	/*font-family:'TimesClassicText-Roman';*/
 }
 
-#wrapper {
+/*#wrapper {
 	margin:40px 100px;
 	width:95%;
-}
+}*/
 
-.leftcol {
+/*.leftcol {
 	width:440px;
 	float:left;
 	display:inline-block;
-}
+}*/
 
 .videobox {
 	margin-bottom:10px;
@@ -27,11 +27,11 @@ body, div {
 }
 
 .parameters {
-	height:160px;
+	height: auto;
 	margin:20px 0 0 0;
 }
 
-.parameters .timestamp {
+/*.parameters .timestamp {
 	display:inline-block;
 	height:20px;
 }
@@ -45,7 +45,7 @@ body, div {
 
 .timestamp span {
 	color:red;
-}
+}*/
 
 .ugcBox {
 	margin:0 20px;
@@ -60,15 +60,19 @@ body, div {
 	font-family: "TimesClassicText-Roman";
 }
 
-.description textarea {
-	margin:20px 0;
+/*.items input, .items textarea  {
+	margin:20px 0 0px;
 	height:40px;
 	width:100%;
 	font-family: "TimesClassicText-Roman";
 	font-size:1em;
 }
 
-.addMoment {
+.items #extraDW {
+	margin-bottom: 20px;
+}*/
+
+/*.addMoment {
 	display:inline-block;
 	border-radius:10px;
 	text-align:center;
@@ -82,14 +86,15 @@ body, div {
 	cursor:pointer;
 }
 
-#out {
+#add {
 	margin-left:20px;
-}
+	background: green;
+}*/
 
-.moments {
+/*.moments {
 	height:135px;
 	overflow-y:scroll;
-}
+}*/
 
 h2 {
 	font-family: "TimesModern-ExtraBold";
@@ -98,19 +103,19 @@ h2 {
 	margin-bottom:10px;
 }
 
-.moment {
+/*.moment {
 	height:30px;
 	margin:10px auto;
 	background-color:#FFC0A6;
 	border-radius: 10px;
-}
+}*/
 
-.rightcol {
+/*.rightcol {
 	width:440px;
 	float:left;
 	margin:0 0 100px 40px;
 	display:inline-block;
-}
+}*/
 
 .article {
 	border:1px solid black;
@@ -124,4 +129,12 @@ h2 {
   border-bottom:solid black 2px;
   padding-bottom:5px;
   margin:0;
+}
+
+/*.times {
+	text-align: center;
+}*/
+
+ul.moments {
+	margin-left: 0px;
 }

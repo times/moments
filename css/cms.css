@@ -1,0 +1,114 @@
+body, div {
+	padding:0;
+	margin:0;
+	font-family:'TimesClassicText-Roman';
+}
+
+#wrapper {
+	margin:40px 100px;
+	width:95%;
+}
+
+.leftcol {
+	width:440px;
+	float:left;
+	display:inline-block;
+}
+
+.videobox {
+	height:248px;
+}
+
+.parameters {
+	height:160px;
+	margin:20px 0 0 0;
+}
+
+.parameters .timestamp {
+	display:inline-block;
+	height:20px;
+}
+
+.timestamp img {
+	height:20px;
+	width:20px;
+	margin:0 4px;
+	vertical-align: text-bottom;
+}
+
+.timestamp span {
+	color:red;
+}
+
+.ugcBox {
+	margin:0 20px;
+	display:inline-block;
+}
+
+.ugcBox input {
+	width:200px;
+	height:1em;
+	padding:4px 4px 0 4px;
+	margin-left:8px;
+	font-family: "TimesClassicText-Roman";
+}
+
+.description textarea {
+	margin:20px 0;
+	height:40px;
+	width:100%;
+	font-family: "TimesClassicText-Roman";
+	font-size:1em;
+}
+
+.addMoment {
+	display:inline-block;
+	border-radius:10px;
+	text-align:center;
+	height:26px;
+	padding:8px 5px;
+	margin:0;
+	background-color:#E3E0FF;
+	border:1px black solid;
+	cursor:hand;
+	cursor:pointer;
+}
+.moments {
+	height:135px;
+	overflow-y:scroll;
+}
+
+h2 {
+	font-family: "TimesModern-ExtraBold";
+	border-bottom:solid black 2px;
+	padding-bottom:5px;
+	margin-bottom:10px;
+}
+
+.moment {
+	height:30px;
+	margin:10px auto;
+	background-color:#FFC0A6;
+	border-radius: 10px;
+}
+
+.rightcol {
+	width:440px;
+	float:left;
+	margin:0 0 100px 40px;
+	display:inline-block;
+}
+
+.article {
+	border:1px solid black;
+	padding:10px;
+	height:600px;
+	overflow-y:scroll;
+}
+
+.article h1 {
+  font-family:"TimesModern-ExtraBold";
+  border-bottom:solid black 2px;
+  padding-bottom:5px;
+  margin:0;
+}

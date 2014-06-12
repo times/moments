@@ -1,0 +1,11 @@
+:host {
+  text-align: center;
+}
+
+:host video {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}

@@ -20,6 +20,27 @@
 			if (articlehtml) {
 				$('.articleBody').replaceWith(articlehtml);
 			}
+
+			var video = videojs('#momentsVideo', {"height":"auto", "width":"auto"}).ready(function(){
+				// This bit via https://github.com/videojs/videojs.com/blob/master/contents/js/home.js
+				var myPlayer = this;    // Store the video object
+				var aspectRatio = 5/12; // Make up an aspect ratio
+
+				function resizeVideoJS(){
+					// Get the parent element's actual width
+					try {
+						var width = document.getElementById(myPlayer.id()).parentElement.offsetWidth;
+					} catch(err) {
+						width = window.innerWidth;
+					}
+
+					// Set width to fill parent element, Set height
+					myPlayer.width(width).height( width * aspectRatio );
+				}
+
+				resizeVideoJS(); // Initialize the function
+				window.onresize = resizeVideoJS; // Call the function on resize
+			});
 		});
 		</script>
 

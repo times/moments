@@ -74,8 +74,8 @@
 			var selectedText = range.toString();
 			var newNode = $('<moments-video></moments-video>').attr({
 				src: $('#player video').attr('src'),
-				start: start,
-				end: end,
+				in: start,
+				out: end,
 				launchText: selectedText,
 				extraImg: $('#extraImg').val(),
 				extraText: $('#extraText').val(),
@@ -89,8 +89,8 @@
 			$('<div data-alert class="moment alert-box alert"></div>')
 				.text(selectedText)
 				.data({
-					start: start,
-					end: end,
+					in: start,
+					out: end,
 					src: $('#player video').attr('src'),
 					extraImg: $('#extraImg').val(),
 					extraText: $('#extraText').val(),

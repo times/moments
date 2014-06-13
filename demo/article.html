@@ -4,7 +4,7 @@
 
     <title>moments demo</title>
 
-		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
 
     <script type="text/javascript" src="js/handlebars.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -21,7 +21,7 @@
 				$('.articleBody').replaceWith(articlehtml);
 			}
 
-			var video = videojs('#momentsVideo', {"height":"auto", "width":"auto"}).ready(function(){
+			var video = videojs('#momentsVideo', {"height":"auto", "width":"auto", 'preload': 'auto'}).ready(function(){
 				// This bit via https://github.com/videojs/videojs.com/blob/master/contents/js/home.js
 				var myPlayer = this;    // Store the video object
 				var aspectRatio = 5/12; // Make up an aspect ratio
@@ -46,9 +46,9 @@
 
 		<!-- video js -->
 		<link href="http://vjs.zencdn.net/4.6/video-js.css" rel="stylesheet">
-		<script src="http://vjs.zencdn.net/4.6/video.js"></script>
+		<script src="../bower_components/videojs/dist/video-js/video.js"></script>
 	</head>
-  <body>
+  <body unresolved>
     <div class="tophat">
       <div class= "logo">
         <img src="assets/masthead.png" alt="integratr" width="auto" height="auto"> x moments
@@ -69,7 +69,6 @@
           </div>
 
           <div class="articleBody">
-
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
@@ -92,13 +91,13 @@
 
       <div class="rightBar">
 
-        <div class="advert1">This is an advert</div>
+        <div class="advert"><img src="assets/ads-01.png" /></div>
 
-        <div class="advert"></div>
+        <div class="advert"><img src="assets/ads-02.png" /></div>
 
-        <div class="advert"></div>
+        <div class="advert"><img src="assets/ads-04.png" /></div>
 
-        <div class="advert"></div>
+        <div class="advert"><img src="assets/ads-05.png" /></div>
 
       </div>
 

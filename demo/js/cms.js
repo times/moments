@@ -36,7 +36,7 @@
 		width: '450px',
 		height: '256px',
 		controls: true,
-		preload: true
+		preload: 'auto',
 	},
 	function() {
 	});
@@ -77,7 +77,7 @@
 				in: start,
 				out: end,
 				launchText: selectedText,
-				extraImg: $('#extraImg').val(),
+				extraImage: $('#extraImg').val(),
 				extraText: $('#extraText').val(),
 				extraDatawrapper: $('#extraDW').val()
 			});
@@ -92,7 +92,7 @@
 					in: start,
 					out: end,
 					src: $('#player video').attr('src'),
-					extraImg: $('#extraImg').val(),
+					extraImage: $('#extraImg').val(),
 					extraText: $('#extraText').val(),
 					extraDW: $('#extraDW').val()
 				})

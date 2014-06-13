@@ -117,14 +117,14 @@ Element for providing integrated video
 
       },
 
-      attached: function() {
+      domReady: function() {
         var shadow = this.shadowRoot;
         var parent = this.parentElement;
         var inTime = this.in;
         var outTime = this.out;
         var launcher = shadow.querySelector('.launchMoment, .play');
 
-        var video = videojs(this.$.momentsVideo, {"height":"auto", "width":"auto", "preload": "auto"}).ready(function(){
+        var video = videojs(this.$.momentsVideo, {'preload': 'auto'}).ready(function(){
           // This bit via https://github.com/videojs/videojs.com/blob/master/contents/js/home.js
           var myPlayer = this;    // Store the video object
           var aspectRatio = 5/12; // Make up an aspect ratio
@@ -140,7 +140,6 @@ Element for providing integrated video
             // Set width to fill parent element, Set height
             myPlayer.width(width).height( width * aspectRatio );
           }
-
           resizeVideoJS(); // Initialize the function
           window.onresize = resizeVideoJS; // Call the function on resize
         });
@@ -153,9 +152,9 @@ Element for providing integrated video
           moment.className = "moment visible";
         });
 
-        video.on("progress", function(){
-          console.dir(this.buffered().start());
-          //this.currentTime(parseInt(inTime));
+        video.on("play", function(){
+          shadow.querySelector('video').currentTime = inTime;
+          this.currentTime(inTime);
         });
 
         video.on('timeupdate', function(){

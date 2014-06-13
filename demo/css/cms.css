@@ -184,7 +184,11 @@ legend {
 }
 
 #extraImg {
-  margin-bottom:50px;
+  margin-bottom:20px;
+}
+
+#extraText {
+  margin-bottom: 0px;
 }
 
 .moments {
@@ -200,4 +204,9 @@ legend {
 
 video {
   width: 400px !important;
+}
+
+fieldset {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }

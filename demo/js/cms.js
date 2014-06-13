@@ -43,11 +43,11 @@
 
 	vid.src({
 		type: 'video/mp4',
-		src: 'http://video-js.zencoder.com/oceans-clip.mp4'
+		src: '../blatter.mp4'
 	});
 
 	vid.on('timeupdate', function(){
-		$('.timestamp span').text(this.currentTime());
+		$('input.timestamp').val(this.currentTime());
 	});
 
 	$('.videourl').keypress(function(e) {
@@ -73,6 +73,7 @@
 		if (start && end && range) {
 			var selectedText = range.toString();
 			var newNode = $('<moments-video></moments-video>').attr({
+				src: $('#player video').attr('src'),
 				start: start,
 				end: end,
 				launchText: selectedText,
@@ -90,6 +91,7 @@
 				.data({
 					start: start,
 					end: end,
+					src: $('#player video').attr('src'),
 					extraImg: $('#extraImg').val(),
 					extraText: $('#extraText').val(),
 					extraDW: $('#extraDW').val()
@@ -98,7 +100,7 @@
 				.wrap('<li>')
 				.appendTo('.moments');
 
-			$('#extraText, #extraImg, #extraDW').val(false);
+			$('#extraText, #extraImg, #extraDW').val('');
 		}
 	});
 })(jQuery)

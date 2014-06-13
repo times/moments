@@ -22,7 +22,6 @@ body, div {
 
 input {
 	background:#EDEDED !important;
-	border:1px solid #7F7F7F;
 }
 
 .videourl {
@@ -30,6 +29,10 @@ input {
 	width:250px;
 	padding:4px;
 	margin:0 0 10px 4px;
+}
+
+.videourl input {
+
 }
 
 .parameters {

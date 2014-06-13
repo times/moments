@@ -1,19 +1,21 @@
 (function($){
 	$(document).foundation();
-	var selection = false;
+	var range = false;
 
 	function selectedText() {
     var selection = "";
     if (window.getSelection) {
         selection = window.getSelection();
+				var range = selection.getRangeAt(0);
+				range.collapse(false);
     } else if (document.selection && document.selection.type != "Control") {
         selection = document.selection;
     }
-    return selection;
+    return range;
 	}
 
 	$('div.article').on('mouseup',function(){
-		selection = selectedText();
+		range = selectedText();
 	});
 
 	var vid = videojs('player', {
@@ -55,8 +57,7 @@
 		var start = $('.startTS').val();
 		var end = $('.endTS').val();
 		var desc = $('#desc').val();
-		if (start && end && desc && selection.type == "Range") {
-			console.log('in')
+		if (start && end && desc && range) {
 			$('<div data-alert class="moment alert-box alert"></div>')
 				.text(desc)
 				.data({
@@ -70,10 +71,17 @@
 				.append('<a href="#" class="close">&times;</a>')
 				.wrap('<li>')
 				.appendTo('.moments');
+			newNode = $('<moments-video></moments-video>').attr({
+				start: start,
+				end: end,
+				desc: desc,
+				extraImg: $('#extraImg'),
+				extraText: $('#extraText'),
+				extraDW: $('#extraDW')
+			});
 
-			var parentSelection = $(selection.focusNode.parentNode);
-			console.dir(parentSelection); // ADD ICON HERE
-			selection = false;
+      range.insertNode(newNode);
+			range = false;
 		}
 	});
 })(jQuery)

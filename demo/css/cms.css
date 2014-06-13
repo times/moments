@@ -1,6 +1,7 @@
 body, div {
 	padding:0;
 	margin:0;
+	font-family:"Karla";
 	/*font-family:'TimesClassicText-Roman';*/
 }
 
@@ -17,6 +18,11 @@ body, div {
 
 .videobox {
 	margin-bottom:10px;
+}
+
+input {
+	background:#EDEDED !important;
+	border:1px solid #7F7F7F;
 }
 
 .videourl {
@@ -137,4 +143,28 @@ h2 {
 
 ul.moments {
 	margin-left: 0px;
+}
+
+.name img {
+	display:inline;
+	margin:0 5px;
+}
+
+.name a {
+	vertical-align: middle;
+	margin-top:8px;
+	font-family:"Karla";
+	color:white !important;
+	font-size:1.4em;
+}
+
+fieldset {
+	border:none;
+}
+
+legend {
+	color:#7F7F7F;
+	width:100%;
+	padding-bottom:2px;
+	border-bottom: 2px #EDEDED solid;
 }

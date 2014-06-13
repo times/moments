@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" type="text/css" href="http://www.thetimes.co.uk/fonts/TimesModern-ExtraBold.css">
     <link rel="stylesheet" type="text/css" href="http://www.thetimes.co.uk/fonts/TimesClassicText-Roman.css">
+    <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 
     <!-- video js -->
     <link href="http://vjs.zencdn.net/4.6/video-js.css" rel="stylesheet">
@@ -28,7 +29,11 @@
 		<nav class="top-bar" data-topbar>
 		  <ul class="title-area">
 		    <li class="name">
-		      <h1><a href="#">moments .<span style="color: red;">.</span>.</a></h1>
+		      <a href="#">
+		      	<img id="masthead" src="assets/masthead.png"/>
+		      	 x 
+		      	<img id="moments-logo" src="assets/moments.png"/>
+		      </a>
 		    </li>
 		  </ul>
 		</nav>
@@ -37,20 +42,27 @@
 				<fieldset>
 					<legend>Video</legend>
           <div class="videobox">
-              Video URL: <input class="videourl" type="text" name="videourl" value="http://video-js.zencoder.com/oceans-clip.mp4">
+              <div class="row collapse">
+              	<div class="small-9 columns">
+              		<input class="videourl" type="text" name="videourl" placeholder="Add video url or upload" value="">
+              	</div>
+              	<div class="small-3 columns">
+              		<div class="enter button postfix">enter</div>
+              	</div>
+              </div>
 							<video id="player" class="video-js vjs-default-skin"></video>
           </div>
           <div class="parameters">
 						<div class="times row">
 							<div class="small-2 columns">
-                <input type="text" class="timestamp" value="0" />
+	              <input type="text" class="timestamp" value="0" />
 							</div>
 							<div class="small-5 columns">
-                <div class="start row collapse">
+	              <div class="start row collapse">
 									<div class="small-3 columns">
-										<a class="addMoment button prefix" id="in">In</a>
+										<a class="addMoment button prefix" id="in">Start</a>
 									</div>
-									<div class="small-9 columns">
+									<div class="small-8 columns">
 										<input type="text" class="startTS" value="0" />
 									</div>
 								</div> <!-- .start -->
@@ -58,9 +70,9 @@
 							<div class="small-5 columns">
 								<div class="end row collapse">
 									<div class="small-3 columns">
-										<a class="addMoment button prefix" id="out">Out</a>
+										<a class="addMoment button prefix" id="out">End</a>
 									</div>
-									<div class="small-9 columns">
+									<div class="small-8 columns">
 										<input type="text" class="endTS" value="0" />
 									</div>
 								</div> <!-- .end -->
@@ -71,16 +83,30 @@
 				<fieldset>
 					<legend>Description</legend>
           <div class="items">
-            <input type="text" placeholder="Enter a description of the video moment here" id="desc" />
+						<textarea placeholder="Enter a description of the video moment here" id="extraText"></textarea>
+						
+          </div>
+        </fieldset>
+        <fieldset>
+					<legend>Content</legend>
+          <div class="items">
 						<input type="text" placeholder="Enter an image to include here (optional)" id="extraImg" />
-						<textarea placeholder="Enter some text to include here (optional)" id="extraText"></textarea>
 						<input type="text" placeholder="Enter a URL to a datawrapper chart here (optional)" id="extraDW" />
           </div>
-					<a class="addMoment button success" id="add">Add</a>
+        </fieldset>
+        <fieldset>
+					<legend>Social</legend>
+          <div class="items">
+            <input type="text" placeholder="Enter a link to social media here" id="desc" />
+						<input type="text" placeholder="Enter a link to social media here" id="extraImg" />
+          </div>
+					<a class="addMoment button success" id="add">Add Moment</a>
         </fieldset>
         <fieldset>
 					<legend>Moments</legend>
 					<ul class="moments">
+						<li>moment<span>x</span></li>
+						<li>moment<span>x</span></li>
 					</ul>
         </fieldset>
       </div> <!-- / .leftcol -->

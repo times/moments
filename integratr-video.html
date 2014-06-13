@@ -7,14 +7,14 @@ Element for providing integrated video
 
 ##### Example
 
-    <integratr-video in="00:00:00" out="00:05:00" src="movie.mpg" extra-image="image.jpg" extra-datawrapper="" extra-text="">Click here to play a snippet from the above video</integratr-video>
+    <integratr-video in="00:00:00" out="00:05:00" launchText="launch video" src="movie.mpg" extraImage="image.jpg" extraDatawrapper="" extraText=""></integratr-video>
 
 @element integratr-video
 @blurb Element for providing integrated video.
 @status alpha
 @homepage http://times.github.io/integratr
 -->
-<polymer-element name="integratr-video" attributes="src in out el extraImage extraDatawrapper extraText">
+<polymer-element name="integratr-video" attributes="launchText src in out el extraImage extraDatawrapper extraText">
 
   <template>
 
@@ -22,10 +22,10 @@ Element for providing integrated video
     <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />
 
     <content>
-      <a href="" class="launchIntegratr">launch video</a>
+      <a href="" class="launchIntegratr">{{launchText}}</a>
       <div class="integratr hidden">
         <video id="integratrVideo" class="video-js vjs-default-skin integratr {{class}}"
-          controls preload="auto" width="100%" height="auto">
+          controls preload="auto" width="auto" height="auto">
          <source src="{{src}}" type='video/mp4' />
          <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
         </video>
@@ -58,6 +58,14 @@ Element for providing integrated video
       revealVideo: function() {
 
       },
+
+      /**
+       * The `launchText` attribute specifies what link text to use when launching the video
+       *
+       * @attribute src
+       * @type string
+       */
+      launchText: 'launch video',
 
       /**
        * The `src` attribute specifies the path to the video file
@@ -112,7 +120,29 @@ Element for providing integrated video
       attached: function() {
         var shadow = this.shadowRoot;
         var launcher = shadow.querySelector('.launchIntegratr');
-        var video = videojs(this.$.integratrVideo);
+        var video = videojs(this.$.integratrVideo, {"height":"auto", "width":"auto"}).ready(function(){
+          // This bit via https://github.com/videojs/videojs.com/blob/master/contents/js/home.js
+          var myPlayer = this;    // Store the video object
+          var aspectRatio = 5/12; // Make up an aspect ratio
+
+          function resizeVideoJS(){
+            // Get the parent element's actual width
+            var width;
+
+            try {
+              width = document.getElementById(myPlayer.id()).parentElement.offsetWidth;
+            } catch(err) {
+              width = window.innerWidth;
+            }
+
+            // Set width to fill parent element, Set height
+            myPlayer.width(width).height( width * aspectRatio );
+          }
+
+          resizeVideoJS(); // Initialize the function
+          window.onresize = resizeVideoJS; // Call the function on resize
+        });
+
         var inTime = this.in;
         var outTime = this.out;
         launcher.addEventListener('click', function(e) {

@@ -1,173 +1,199 @@
 body, div {
-	padding:0;
-	margin:0;
-	font-family:"Karla";
-	/*font-family:'TimesClassicText-Roman';*/
+  padding:0;
+  margin:0;
+  font-family:"Karla";
+  /*font-family:'TimesClassicText-Roman';*/
 }
 
 /*#wrapper {
-	margin:40px 100px;
-	width:95%;
+  margin:40px 100px;
+  width:95%;
 }*/
 
 /*.leftcol {
-	width:440px;
-	float:left;
-	display:inline-block;
+  width:440px;
+  float:left;
+  display:inline-block;
 }*/
 
 .videobox {
-	margin-bottom:10px;
+  margin-bottom:10px;
 }
 
 input {
-	background:#EDEDED !important;
-}
-
-.videourl {
-	height:1.1em;
-	width:250px;
-	padding:4px;
-	margin:0 0 10px 4px;
-}
-
-.videourl input {
-
+  background:#EDEDED !important;
 }
 
 .parameters {
-	height: auto;
-	margin:20px 0 0 0;
+  height: auto;
+  margin:20px 0 0 0;
 }
 
 /*.parameters .timestamp {
-	display:inline-block;
-	height:20px;
+  display:inline-block;
+  height:20px;
 }
 
 .timestamp img {
-	height:20px;
-	width:20px;
-	margin:0 4px;
-	vertical-align: text-bottom;
+  height:20px;
+  width:20px;
+  margin:0 4px;
+  vertical-align: text-bottom;
 }
 
 .timestamp span {
-	color:red;
+  color:red;
 }*/
 
 .ugcBox {
-	margin:0 20px;
-	display:inline-block;
+  margin:0 20px;
+  display:inline-block;
 }
 
 .ugcBox input {
-	width:200px;
-	height:1.1em;
-	padding:4px 4px 0 4px;
-	margin-left:8px;
-	font-family: "TimesClassicText-Roman";
+  width:200px;
+  height:1.1em;
+  padding:4px 4px 0 4px;
+  margin-left:8px;
+  font-family: "TimesClassicText-Roman";
 }
 
 /*.items input, .items textarea  {
-	margin:20px 0 0px;
-	height:40px;
-	width:100%;
-	font-family: "TimesClassicText-Roman";
-	font-size:1em;
+  margin:20px 0 0px;
+  height:40px;
+  width:100%;
+  font-family: "TimesClassicText-Roman";
+  font-size:1em;
 }
 
 .items #extraDW {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }*/
 
 /*.addMoment {
-	display:inline-block;
-	border-radius:10px;
-	text-align:center;
-	height:26px;
-	width:30px;
-	padding:8px 5px;
-	margin:0;
-	background-color:#E3E0FF;
-	border:1px black solid;
-	cursor:hand;
-	cursor:pointer;
+  display:inline-block;
+  border-radius:10px;
+  text-align:center;
+  height:26px;
+  width:30px;
+  padding:8px 5px;
+  margin:0;
+  background-color:#E3E0FF;
+  border:1px black solid;
+  cursor:hand;
+  cursor:pointer;
 }
 
 #add {
-	margin-left:20px;
-	background: green;
+  margin-left:20px;
+  background: green;
 }*/
 
 /*.moments {
-	height:135px;
-	overflow-y:scroll;
+  height:135px;
+  overflow-y:scroll;
 }*/
 
 h2 {
-	font-family: "TimesModern-ExtraBold";
-	border-bottom:solid black 2px;
-	padding-bottom:5px;
-	margin-bottom:10px;
+  font-family: "TimesModern-ExtraBold";
+  border-bottom:solid black 2px;
+  padding-bottom:5px;
+  margin-bottom:10px;
 }
 
 /*.moment {
-	height:30px;
-	margin:10px auto;
-	background-color:#FFC0A6;
-	border-radius: 10px;
+  height:30px;
+  margin:10px auto;
+  background-color:#FFC0A6;
+  border-radius: 10px;
 }*/
 
 /*.rightcol {
-	width:440px;
-	float:left;
-	margin:0 0 100px 40px;
-	display:inline-block;
+  width:440px;
+  float:left;
+  margin:0 0 100px 40px;
+  display:inline-block;
 }*/
 
 .article {
-	border:1px solid black;
-	padding:10px;
-	height:600px;
-	overflow-y:scroll;
+  font-family:"TimesClassicText-Roman";
+  height:600px;
+  overflow-y:scroll;
 }
 
 .article h1 {
   font-family:"TimesModern-ExtraBold";
   border-bottom:solid black 2px;
-  padding-bottom:5px;
-  margin:0;
+  padding:0;
+  line-height: 93%;
+  margin:0 0 10px 0;
 }
 
 /*.times {
-	text-align: center;
+  text-align: center;
 }*/
 
 ul.moments {
-	margin-left: 0px;
+  margin-left: 0px;
 }
 
 .name img {
-	display:inline;
-	margin:0 5px;
+  display:inline;
+  margin:0 5px;
 }
 
 .name a {
-	vertical-align: middle;
-	margin-top:8px;
-	font-family:"Karla";
-	color:white !important;
-	font-size:1.4em;
+  vertical-align: middle;
+  margin-top:8px;
+  font-family:"Karla";
+  color:white !important;
+  font-size:1.4em;
 }
 
 fieldset {
-	border:none;
+  border:none;
 }
 
 legend {
-	color:#7F7F7F;
-	width:100%;
-	padding-bottom:2px;
-	border-bottom: 2px #EDEDED solid;
+  color:#7F7F7F;
+  width:100%;
+  padding-bottom:2px;
+  border-bottom: 2px #EDEDED solid;
+}
+
+.button {
+  color: rgba(0, 0, 0, 0.75);
+  background:#ABABAB;
+  border:solid 1px #cccccc !important;
+}
+
+.startTS, .endTS {
+  background:white !important;
+}
+
+.success {
+  font-weight:bold;
+  background:#EDEDED !important;
+  color:#33BD4C !important;
+  margin-bottom:30px;
+}
+
+.button.enter {
+  width: 98%;
+  float: right;
+}
+
+#extraImg {
+  margin-bottom:50px;
+}
+
+.moments {
+  list-style: none;
+  margin:5px 0;
+  padding:0;
+  background-color:#EDEDED;
+}
+
+.moments span {
+  text-align:right;
 }

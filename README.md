@@ -1,7 +1,7 @@
-integratr
+moments
 ================
 
-See the [component page](http://times.github.io/integratr) for more information.
+See the [component page](http://times.github.io/moments) for more information.
 
 ## Getting Started
 

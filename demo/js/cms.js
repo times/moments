@@ -1,4 +1,19 @@
 (function($){
+
+	/**
+	 *  Hi there! Modifying this to use at your news org? You'll need to link
+	 *  the following stanza to some API allowing publishing to your CMS.
+	 *  Currently all it does is save to localstorage (It *is* a hack, afterall).
+	 */
+
+	$('#publish').click(function(e){
+		e.preventDefault();
+		localStorage.setItem('article', $('.article').html());
+		$(this).after($('<div>').addClass('alert-box success').text('Success!'));
+	});
+
+	// Okiedokes, stop editing now. :)
+
 	$(document).foundation();
 	var range = false;
 
@@ -7,7 +22,6 @@
     if (window.getSelection) {
         selection = window.getSelection();
 				var range = selection.getRangeAt(0);
-				range.collapse(false);
     } else if (document.selection && document.selection.type != "Control") {
         selection = document.selection;
     }
@@ -56,32 +70,35 @@
 	$('#add').click(function(){
 		var start = $('.startTS').val();
 		var end = $('.endTS').val();
-		var desc = $('#desc').val();
-		if (start && end && desc && range) {
+		if (start && end && range) {
+			var selectedText = range.toString();
+			var newNode = $('<moments-video></moments-video>').attr({
+				start: start,
+				end: end,
+				launchText: selectedText,
+				extraImg: $('#extraImg').val(),
+				extraText: $('#extraText').val(),
+				extraDatawrapper: $('#extraDW').val()
+			});
+
+			range.deleteContents();
+			range.insertNode(newNode[0]);
+			range = false;
+
 			$('<div data-alert class="moment alert-box alert"></div>')
-				.text(desc)
+				.text(selectedText)
 				.data({
 					start: start,
 					end: end,
-					desc: desc,
-					extraImg: $('#extraImg'),
-					extraText: $('#extraText'),
-					extraDW: $('#extraDW')
+					extraImg: $('#extraImg').val(),
+					extraText: $('#extraText').val(),
+					extraDW: $('#extraDW').val()
 				})
 				.append('<a href="#" class="close">&times;</a>')
 				.wrap('<li>')
 				.appendTo('.moments');
-			newNode = $('<moments-video></moments-video>').attr({
-				start: start,
-				end: end,
-				desc: desc,
-				extraImg: $('#extraImg'),
-				extraText: $('#extraText'),
-				extraDW: $('#extraDW')
-			});
 
-      range.insertNode(newNode);
-			range = false;
+			$('#extraText, #extraImg, #extraDW').val(false);
 		}
 	});
 })(jQuery)

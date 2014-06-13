@@ -6,6 +6,9 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moments Admin</title>
 
+		<script src="../bower_components/platform/platform.js"></script>
+		<link rel="import" href="../moments-video.html">
+
 		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../bower_components/handlebars/handlebars.js"></script>
 		<script type="text/javascript" src="../bower_components/foundation/js/foundation.js"></script>
@@ -25,13 +28,13 @@
     <script src="http://vjs.zencdn.net/4.6/video.js"></script>
 
 	</head>
-  <body>
+  <body unresolved>
 		<nav class="top-bar" data-topbar>
 		  <ul class="title-area">
 		    <li class="name">
 		      <a href="#">
 		      	<img id="masthead" src="assets/masthead.png"/>
-		      	 x 
+		      	 x
 		      	<img id="moments-logo" src="assets/moments.png"/>
 		      </a>
 		    </li>
@@ -84,7 +87,7 @@
 					<legend>Description</legend>
           <div class="items">
 						<textarea placeholder="Enter a description of the video moment here" id="extraText"></textarea>
-						
+
           </div>
         </fieldset>
         <fieldset>
@@ -93,29 +96,27 @@
 						<input type="text" placeholder="Enter an image to include here (optional)" id="extraImg" />
 						<input type="text" placeholder="Enter a URL to a datawrapper chart here (optional)" id="extraDW" />
           </div>
-        </fieldset>
-        <fieldset>
-					<legend>Social</legend>
-          <div class="items">
-            <input type="text" placeholder="Enter a link to social media here" id="desc" />
-						<input type="text" placeholder="Enter a link to social media here" id="extraImg" />
-          </div>
 					<a class="addMoment button success" id="add">Add Moment</a>
         </fieldset>
+<!--        <fieldset>
+					<legend>Social</legend>
+          <div class="items">
+            <input type="text" placeholder="Enter a link to social media here" id="ugc1" />
+						<input type="text" placeholder="Enter a link to social media here" id="ugc2" />
+          </div>
+
+        </fieldset>-->
         <fieldset>
 					<legend>Moments</legend>
 					<ul class="moments">
-						<li>moment<span>x</span></li>
-						<li>moment<span>x</span></li>
 					</ul>
         </fieldset>
       </div> <!-- / .leftcol -->
       <div class="rightcol small-6 columns">
 				<fieldset>
 					<legend>Article</legend>
+					<h1 class="headline">Headline</h1>
           <div class="article">
-              <h1>Headline</h1>
-
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
@@ -127,7 +128,10 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+							<moments-video start="1" end="3" launchtext="Lorem ipsum " extraimg="" extratext="" extradw=""></moments-video>
           </div>
+					<br />
+					<a href="#" id="publish" class="button alert round">Publish to CMS</a>
 				</fieldset>
     	</div>
     </div> <!-- / #wrapper -->

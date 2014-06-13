@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-    <title>moments dmeo</title>
+    <title>moments demo</title>
 
 		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 
@@ -14,7 +14,18 @@
     <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 		<script src="../bower_components/platform/platform.js"></script>
 		<link rel="import" href="../moments-video.html">
+		<script type="text/javascript">
+		$(document).ready(function(){
+			var articlehtml = localStorage.getItem('article');
+			if (articlehtml) {
+				$('.articleBody').replaceWith(articlehtml);
+			}
+		});
+		</script>
 
+		<!-- video js -->
+		<link href="http://vjs.zencdn.net/4.6/video-js.css" rel="stylesheet">
+		<script src="http://vjs.zencdn.net/4.6/video.js"></script>
 	</head>
   <body>
     <div class="tophat">
@@ -30,26 +41,29 @@
           <h1>Sepp Blatter has become Teflon figure who holds all the cards</h1>
 
           <div class="videoTop">
-            <iframe width="519" height="292" src="http://www.youtube.com/embed/O1Y8f8_SiSQ" frameborder="0" allowfullscreen></iframe>
+            <video id="momentsVideo" class="video-js vjs-default-skin moments" controls preload="auto" width="auto" height="auto">
+							<source src="{{src}}" type='video/mp4' />
+							<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+						</video>
           </div>
 
           <div class="articleBody">
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. <span class="play"></span><span class="highlight">In hac</span> habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
-
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. <span class="play"></span><span class="highlight">Etiam</span> tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, <span class="play"></span><span class="highlight">lobortis tincidunt</span> est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
-              <p><span class="play"></span><span class="highlight">Lorem</span> ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla ligula, scelerisque ac fringilla at, commodo eu odio. Etiam tincidunt, nulla et feugiat auctor, urna ligula porta ante, lobortis tincidunt est lacus vehicula odio. Curabitur tincidunt metus risus, at elementum eros feugiat a. Ut vehicula erat magna, ac ultrices dui luctus eget. In hac habitasse platea dictumst. Vestibulum et rhoncus ipsum. Nulla pretium velit nibh, ac viverra augue tempus ac. Nullam ornare feugiat odio, et accumsan massa lobortis sit amet.</p>
 
           </div>
 

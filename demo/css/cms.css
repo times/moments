@@ -121,7 +121,7 @@ h2 {
   overflow-y:scroll;
 }
 
-.article h1 {
+h1.headline {
   font-family:"TimesModern-ExtraBold";
   border-bottom:solid black 2px;
   padding:0;
@@ -196,4 +196,8 @@ legend {
 
 .moments span {
   text-align:right;
+}
+
+video {
+  width: 400px !important;
 }

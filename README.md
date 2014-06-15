@@ -4,6 +4,12 @@
 
 ## [Winner][2] of the 2014 Editors Lab Hackdays Final at GENSummit2014
 
+Original Team:
+
++ Josh Boswell (presentation; development)
++ Ændrew Rininsland (development; documentation)
++ Eoin Tunstead (design)
+
 ### Moments is a Polymer component and light backend
 
 #### Polymer component
@@ -25,8 +31,14 @@ html into a localStorage store; you'll need knowledge on how to extend your CMS 
 you want to use it with that. WordPress plugin coming soon!). Visit [article.html][5]
 for an example preview (this just reads the contents of the aforementioned localStorage store).
 
+## HELP WANTED
+
+We're wanting to port this to WordPress ASAP. Please see [this issue][6] if you wish
+to help with that or other CMSes!
+
 [1]: ./momentslogo.png
 [2]: http://www.globaleditorsnetwork.org/programmes/editors-lab/season-2013-2014/editors-lab-hackdays-final/
 [3]: http://www.polymer-project.org/images/logos/lockup.svg
 [4]: http://times.github.io/moments/demo/cms.html
 [5]: http://www.polymer-project.org/docs/start/reusableelements.html
+[6]: https://github.com/times/moments/issues/2

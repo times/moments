@@ -49,20 +49,9 @@ Element for providing integrated video
 
     Polymer('moments-video', {
       /**
-       * The `noevent` event is not actually fired from here,
-       * we document it as an example of documenting events.
-       *
-       * @event noevent
-       */
-
-      revealVideo: function() {
-
-      },
-
-      /**
        * The `launchText` attribute specifies what link text to use when launching the video
        *
-       * @attribute src
+       * @attribute launchText
        * @type string
        */
       launchText: 'launch video',
@@ -76,7 +65,7 @@ Element for providing integrated video
       src: '',
 
       /**
-       * The `el` attribute specifies which <video> element to target
+       * The `el` attribute specifies which `video` element to target
        *
        * @attribute el
        * @type string
@@ -98,6 +87,30 @@ Element for providing integrated video
        * @type string
        */
       out: 0,
+
+      /**
+       * The `extraImage` attribute adds an image below the video.
+       *
+       * @attribute extraImage
+       * @type string
+       */
+      extraImage,
+
+      /**
+       * The `extraText` attribute adds a paragraph of text beneath the video.
+       *
+       * @attribute extraText
+       * @type string
+       */
+      extraText,
+
+      /**
+       * The `extraDatawrapper` adds a Datawrapper.de chart below the video.
+       *
+       * @attribute extraDatawrapper
+       * @type url
+       */
+      extraDatawrapper,
 
       ready: function() {
         if (this.el) {

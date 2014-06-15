@@ -8,7 +8,7 @@
 
 #### Polymer component
 
-[!][Polymer][3]
+![Polymer][3]
 
 See the [`moment-video` component page](http://times.github.io/moments) for more information.
 

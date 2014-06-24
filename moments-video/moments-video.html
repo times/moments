@@ -1,0 +1,184 @@
+<link rel="import" href="../polymer/polymer.html">
+<script src="../videojs/dist/video-js/video.js"></script>
+<script src="../jquery/dist/jquery.min.js"></script>
+
+<!--
+Element for providing integrated video
+
+##### Example
+
+    <moments-video in="00:00:00" out="00:05:00" launchText="launch video" src="movie.mpg" extraImage="image.jpg" extraDatawrapper="" extraText=""></moments-video>
+
+@element moments-video
+@blurb Element for providing integrated video.
+@status alpha
+@homepage http://times.github.io/moments
+-->
+<polymer-element name="moments-video" attributes="launchText src in out el extraImage extraDatawrapper extraText">
+
+  <template>
+
+    <link rel="stylesheet" href="moments-video.css" />
+    <link rel="stylesheet" href="../videojs/dist/video-js/video-js.css" />
+
+    <content>
+      <span class="play"></span><span class="launchMoment highlight">{{launchText}}</span>
+      <div class="moment hidden">
+        <video id="momentsVideo" class="video-js vjs-default-skin moments {{class}}"
+          controls preload="auto" width="auto" height="auto">
+         <source src="{{src}}" type='video/mp4' />
+         <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <template if="{{extraImage}}">
+          <img src="{{extraImage}}" width="100%" class="extraImage" />
+        </template>
+
+        <template if="{{extraText}}">
+          <p class="extraText">{{extraText}}</p>
+        </template>
+
+        <template if="{{extraDatawrapper}}">
+          <iframe class="extraDatawrapper" src="{{extraDatawrapper}}" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="100%" height="auto"></iframe>
+        </template>
+      </div>
+    </content>
+
+  </template>
+
+  <script>
+
+    Polymer('moments-video', {
+      /**
+       * The `launchText` attribute specifies what link text to use when launching the video
+       *
+       * @attribute launchText
+       * @type string
+       */
+      launchText: 'launch video',
+
+      /**
+       * The `src` attribute specifies the path to the video file
+       *
+       * @attribute src
+       * @type string
+       */
+      src: '',
+
+      /**
+       * The `el` attribute specifies which `video` element to target
+       *
+       * @attribute el
+       * @type string
+       */
+      el: '',
+
+      /**
+       * The `in` attribute specifies when to bring the video clip in
+       *
+       * @attribute in
+       * @type string
+       */
+      in: 0,
+
+      /**
+       * The `out` attribute specifies when to bring the video clip out
+       *
+       * @attribute out
+       * @type string
+       */
+      out: 0,
+
+      /**
+       * The `extraImage` attribute adds an image below the video.
+       *
+       * @attribute extraImage
+       * @type string
+       */
+      extraImage: '',
+
+      /**
+       * The `extraText` attribute adds a paragraph of text beneath the video.
+       *
+       * @attribute extraText
+       * @type string
+       */
+      extraText: '',
+
+      /**
+       * The `extraDatawrapper` adds a Datawrapper.de chart below the video.
+       *
+       * @attribute extraDatawrapper
+       * @type url
+       */
+      extraDatawrapper: '',
+
+      ready: function() {
+        if (this.el) {
+          this.src = document.getElementById(this.el).src;
+        }
+
+        // this.items = [];
+        //
+        // for (var prop in this) {
+        //   if (this.hasOwnProperty(prop) && prop.indexOf('extra') > -1) {
+        //
+        //     this.items.push(prop);
+        //   }
+        // }
+        //
+        // console.dir(this.items);
+
+      },
+
+      domReady: function() {
+        var shadow = this.shadowRoot;
+        var parent = this.parentElement;
+        var inTime = this.in;
+        var outTime = this.out;
+        var launcher = shadow.querySelector('.launchMoment, .play');
+
+        var video = videojs(this.$.momentsVideo, {'preload': 'auto'}).ready(function(){
+          // This bit via https://github.com/videojs/videojs.com/blob/master/contents/js/home.js
+          var myPlayer = this;    // Store the video object
+          var aspectRatio = 5/12; // Make up an aspect ratio
+          function resizeVideoJS(){
+            // Get the parent element's actual width
+            var width;
+            try {
+              width = parent.offsetWidth;
+            } catch(err) {
+              width = window.innerWidth;
+            }
+
+            // Set width to fill parent element, Set height
+            myPlayer.width(width).height( width * aspectRatio );
+          }
+          resizeVideoJS(); // Initialize the function
+          window.onresize = resizeVideoJS; // Call the function on resize
+        });
+
+        console.log('inTime: ' + inTime + ' outTime: ' + outTime);
+        launcher.addEventListener('click', function(e) {
+          e.preventDefault();
+          //launcher.className = "hidden";
+          var moment = shadow.querySelector('div.moment.hidden');
+          moment.className = "moment visible";
+        });
+
+        video.on("play", function(){
+          shadow.querySelector('video').currentTime = inTime;
+          this.currentTime(inTime);
+        });
+
+        video.on('timeupdate', function(){
+          if (this.currentTime() >= outTime) {
+            video.pause();
+          }
+        });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

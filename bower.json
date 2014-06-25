@@ -1,0 +1,30 @@
+{
+  "name": "moments",
+  "version": "0.0.2",
+  "homepage": "https://github.com/times/moments",
+  "authors": [
+    "Ændrew Rininsland <aendrew@aendrew.com>"
+  ],
+  "description": "An interface for the moments-video web component.",
+  "main": "README.md",
+  "keywords": [
+    "video",
+    "web-components",
+    "news",
+    "GENsummit",
+    "hackdays",
+    "EditorsLab"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moments-video": "times/moments-video"
+  }
+}

@@ -1,0 +1,109 @@
+body, div {
+  margin:0;
+  padding:0;
+}
+body {
+  background-color:#ffffff;
+}
+.tophat {
+  position: fixed;
+  top:0;
+  left:0;
+  height: 40px;
+  width:100%;
+  background: black;
+  padding:0.1em;
+  text-align: center;
+  z-index:20;
+}
+.logo {
+  margin:0 30px;
+  font-family:"Karla";
+  color:white;
+  vertical-align: middle;
+}
+.logo img {
+  vertical-align: text-bottom;
+  margin-top:8px;
+  margin-right:4px;
+}
+#wrapper {
+  width:80%;
+  margin:50px auto;
+}
+.article {
+  display:inline-block;
+  float:left;
+  width:50%;
+}
+.article h1 {
+  font-family:"TimesModern-ExtraBold";
+  font-size: 2.5em;
+  line-height: 1.2em;
+  letter-spacing: 0.02em;
+  border-bottom:solid black 2px;
+  padding-bottom:5px;
+}
+.videoTop {
+  width:100%;
+  height:auto;
+  background-color: #C5DAE8;
+}
+.article p {
+  font-family:"TimesClassicText-Roman";
+  line-height: 1.3em;
+}
+.rightBar {
+  display:inline-block;
+  float:right;
+  margin:80px 5%;
+  width:30%;
+}
+.rightBar .advert {
+  width:100%;
+  height:200px;
+  background-color:black;
+  margin-bottom:40px;
+}
+.advert1 {
+  font-family: "Karla";
+  color: #C5DAE8;
+  width:100%;
+  height:200px;
+  background-color:black;
+  margin-bottom:40px;
+}
+.play {
+  display:inline-block;
+  position:relative;
+  top:2px;
+  margin:0 4px 0 1px;
+  width:20px;
+  height:19px;
+  padding:2px;
+  vertical-align: text-bottom;
+  background-color: #F0F0EB;
+  border-radius:0%;
+  background-image: url('../assets/play.png');
+  background-repeat: no-repeat;
+  background-position:7px 5px;
+}
+.darken {
+  background-color:#969696;
+}
+.highlight {
+  background-color:#F0F0EB;
+  padding:2px 4px;
+}
+.videoBox {
+	display:none;
+	width:100%;
+	margin:15px 0;
+	height:248px;
+}
+
+.advert {
+  background: transparent;
+  border: 4px solid black;
+  text-align: center;
+}

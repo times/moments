@@ -1,5 +1,10 @@
-node_modules
-dist
-.sass-cache
-.tmp
-bower_components
+*
+
+!README.md
+!momentslogo.png
+!.*
+!bower.json
+!blatter.mp4
+!demo/
+!demo/*
+

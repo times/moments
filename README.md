@@ -16,7 +16,7 @@ Original Team:
 
 ![Polymer][3]
 
-See the [`moment-video` component page](http://times.github.io/moments) for more information.
+See the [`moments-video` component page](http://times.github.io/moments-video) for more information.
 
 ##### Getting Started With the Polymer Element
 
@@ -30,6 +30,13 @@ element. Click "Publish to CMS" to save to the CMS (currently it just dumps the
 html into a localStorage store; you'll need knowledge on how to extend your CMS if
 you want to use it with that. WordPress plugin coming soon!). Visit [article.html][5]
 for an example preview (this just reads the contents of the aforementioned localStorage store).
+
+### Installation
+
++ `$ bower install` to grab the `moments-video` Polymer component.
++ `demo/cms.html` is intended to demonstrate a possible interface.
++ But basically, you need to insert `<moments-video>` tags in your content.
++ See the [`moments-video` component page](http://times.github.io/moments-video) for more information.
 
 ## HELP WANTED
 

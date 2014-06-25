@@ -6,9 +6,9 @@
 
 Original Team:
 
-+ Josh Boswell (presentation; development)
-+ Ændrew Rininsland (development; documentation)
-+ Eoin Tunstead (design)
++ [Josh Boswell](https://twitter.com/JoshTBoswell) (presentation; development)
++ [Ændrew Rininsland](https://twitter.com/aendrew) (development; documentation)
++ [Eoin Tunstead](https://twitter.com/eointunstead) (design)
 
 ### Moments is a Polymer component and light backend
 
